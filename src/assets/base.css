@@ -25,6 +25,7 @@
   --content-bg: #FFFFFF;
   --border-color: var(--very-light-grayish-blue);
   --footer-color: var(--dark-grayish-blue);
+  --task-done: var(--very-light-grayish-blue);
   --text-color: var(--very-dark-grayish-blue);
   --hero-img: url(./bg-desktop-light.jpg);
 }
@@ -35,6 +36,7 @@
     --content-bg: var(--mdark-very-dark-desaturated-blue);
     --border-color: var(--mdark-very-dark-grayish-blue);
     --footer-color: var(--mdark-dark-grayish-blue);
+    --task-done: var(--mdark-very-dark-grayish-blue);
     --text-color: var(--mdark-light-grayish-blue);
     --hero-img: url(./bg-desktop-dark.jpg);
   }
@@ -68,7 +70,7 @@ button {
   width: 100%;
   background-color: #FFFFFF;
   color: var(--text-color);
-  display: inline-block;
+  display: block;
   padding: 0;
   margin: 0;
 }
@@ -83,9 +85,11 @@ button {
 .container {
   max-width: 800px;
   margin: auto;
+  padding: 0 1rem;
 }
 .grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 1rem;
+  align-items: center;
 }

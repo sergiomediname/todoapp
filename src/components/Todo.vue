@@ -113,7 +113,7 @@ onMounted(() => {
                         <span class="todo-task__completed">
                             <button @click="completedTask(index)"></button>
                         </span>
-                        <span class="todo-task__name">{{ task.name }} - {{ task.status }}</span>
+                        <span class="todo-task__name" @click="completedTask(index)">{{ task.name }} - {{ task.status }}</span>
                         <span class="todo-task__delete">
                             <button @click="deleteTask(index)"></button>
                         </span>

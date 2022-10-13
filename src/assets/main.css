@@ -57,6 +57,7 @@
 }
 #todo .todo-task__name {
     grid-column: span 10;
+    cursor: pointer;
 }
 
 /* Task completed */
@@ -88,6 +89,7 @@
     width: 50%;
     height: 50%;
     background: url(./icon-check.svg) no-repeat center / contain;
+    opacity: 0;
 }
 
 /* Task completed hover/active */
@@ -98,6 +100,13 @@
 
 #todo .todo-task.done .todo-task__completed button::before {
     opacity: 0;
+}
+#todo .todo-task.done .todo-task__completed button::after {
+    opacity: 1;
+}
+#todo .todo-task.done .todo-task__name {
+    text-decoration: line-through;
+    color: var(--task-done);
 }
 
 /* Task delete */

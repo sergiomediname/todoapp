@@ -1,0 +1,150 @@
+@import "./base.css";
+
+#todo {
+    position: relative;
+    padding: 3rem 0;
+}
+#todo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--hero-img) no-repeat center / cover;
+    width: 100%;
+    height: 300px;
+}
+
+/* Title */
+#todo .todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+#todo .todo-header__title {
+    font-size: 2.5rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-weight: 700;
+    letter-spacing: .6rem;
+}
+
+/* Form */
+#todo .todo-form input {
+    padding: 1.2rem;
+    font-weight: 700;
+    background-color: var(--content-bg);
+    border-radius: var(--todo-border-radius);
+}
+
+/* Content */
+#todo .todo-content {
+    background-color: var(--content-bg);
+    margin-top: 1.5rem;
+    border-radius: var(--todo-border-radius);
+    box-shadow: -1px 10px 30px 0px rgba(0, 0, 0, .1);
+}
+
+/* Task */
+#todo .todo-task {
+    padding: 1.2rem;
+    border-bottom: solid 1px var(--border-color);
+}
+#todo .todo-task__completed,
+#todo .todo-task__delete {
+    grid-column: span 1;
+}
+#todo .todo-task__name {
+    grid-column: span 10;
+}
+
+/* Task completed */
+#todo .todo-task__completed button {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--border-color);
+}
+
+#todo .todo-task__completed button::before,
+#todo .todo-task__completed button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#todo .todo-task__completed button::before {
+    width: 80%;
+    height: 80%;
+    background-color: var(--content-bg);
+    border-radius: 50%;
+}
+
+#todo .todo-task__completed button::after {
+    width: 50%;
+    height: 50%;
+    background: url(./icon-check.svg) no-repeat center / contain;
+}
+
+/* Task completed hover/active */
+#todo .todo-task__completed button:hover,
+#todo .todo-task.done .todo-task__completed button {
+    background: var(--check-background);
+}
+
+#todo .todo-task.done .todo-task__completed button::before {
+    opacity: 0;
+}
+
+/* Task delete */
+#todo .todo-task__delete button {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    opacity: 0;
+}
+#todo .todo-task__delete button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./icon-cross.svg) no-repeat center / contain;
+}
+#todo .todo-task:hover .todo-task__delete button {
+    opacity: 1;
+}
+
+/* Todo footer */
+#todo .todo-footer {
+    padding: 1rem;
+    font-size: .8rem;
+    color: var(--footer-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Todo actions */
+#todo .todo-action {
+    color: var(--footer-color);
+    font-weight: 700;
+}
+#todo .todo-action:hover {
+    color: var(--text-color);
+}
+#todo .todo-action.active {
+    color: var(--bright-blue);
+}
+
+#todo .todo-footer__filters {
+    display: flex;
+    align-items: center;
+}
+#todo .todo-footer__filters .todo-action:not(:last-child) {
+    margin-right: 1.5rem;
+}

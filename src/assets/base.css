@@ -1,0 +1,91 @@
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --bright-blue: #3a7bfd;
+  --check-background: linear-gradient(135deg, #57ddff 0%, #c058f3 100%);
+  --todo-border-radius: .3rem;
+  
+  /* Light */
+  --very-light-gray: #fafafa;
+  --very-light-grayish-blue: #e4e5f1;
+  --dark-grayish-blue: #9394a5;
+  --very-dark-grayish-blue: #484b6a;
+
+  /* dark */
+  --mdark-very-dark-blue: #161722;
+  --mdark-very-dark-desaturated-blue: #25273c;
+  --mdark-light-grayish-blue: #cacde8;
+  --mdark-light-grayish-blue-hover: #e3e4f2;
+  --mdark-dark-grayish-blue: #777a92;
+  --mdark-very-dark-grayish-blue: #4d5066;
+}
+
+/* semantic color variables for this project */
+:root {
+  --main-bg: var(--very-light-gray);
+  --content-bg: #FFFFFF;
+  --border-color: var(--very-light-grayish-blue);
+  --footer-color: var(--dark-grayish-blue);
+  --text-color: var(--very-dark-grayish-blue);
+  --hero-img: url(./bg-desktop-light.jpg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-bg: var(--mdark-very-dark-blue);
+    --content-bg: var(--mdark-very-dark-desaturated-blue);
+    --border-color: var(--mdark-very-dark-grayish-blue);
+    --footer-color: var(--mdark-dark-grayish-blue);
+    --text-color: var(--mdark-light-grayish-blue);
+    --hero-img: url(./bg-desktop-dark.jpg);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: var(--main-bg);
+  color: var(--text-color);
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: #FFFFFF;
+  color: var(--text-color);
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+input::placeholder {
+  color: var(--text-color);
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
